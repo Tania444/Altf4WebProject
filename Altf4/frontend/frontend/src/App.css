@@ -1,4 +1,9 @@
-/* Reset globale e root */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -17,24 +22,28 @@ html, body {
   left: 0;
   width: 100%;
   height: 3rem;
-  background-color: #facc15;
+  background-color: #000000;
   overflow: hidden;
   z-index: 100;
 }
+/* fa roteare la scritta */
 .scroll-banner-text {
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: 50%;
   transform: translateY(-50%);
   white-space: nowrap;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 30s linear infinite;
+  z-index: 2;
+  animation-delay: -10s;
 }
+/*testo sulla scroll bar*/
 .scroll-banner-text span {
   display: inline-block;
   margin-right: 2rem;
   font-size: 2rem;
   font-weight: 700;
-  color: #000;
+  color: #facc15;
 }
 @keyframes scroll-left {
   0%   { left: 100%; }
@@ -54,8 +63,8 @@ header {
   justify-content: space-between;
   padding: 0 2rem;
   z-index: 90;
-  font-family: 'Poppins','Segoe UI','Roboto','Helvetica Neue',sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 header nav {
@@ -66,7 +75,7 @@ header nav {
 header nav > .group > button {
   transition: color 0.3s ease;
   font-size: 1.1rem;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 header nav > .group > button:hover {
   color: #000;
@@ -78,14 +87,14 @@ header nav .group {
 }
 header nav .group ul {
   position: absolute;
-  top: calc(100% + 0px);
+  top: 100%;
   left: 0;
-  transform: translateX(-10px) translateY(-10px);
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background-color: #000;
+  background-color: #facc15;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   opacity: 0;
@@ -97,6 +106,7 @@ header nav .group:hover ul {
   transform: translateX(-10px) translateY(0);
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(0);
 }
 header nav ul li a {
   white-space: nowrap;
@@ -123,7 +133,7 @@ header nav ul li a:hover {
 .hero-text-overlay h1 {
   margin: 0;
   color: #facc15;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 800;
   text-align: center;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
@@ -143,5 +153,28 @@ section > video {
   z-index: 0 !important;
 }
 #partite {
-  margin-top: calc(750px + 2cm + 3rem) !important;
+  margin-top: calc(750px + 2cm + 5rem) !important;
+}
+
+/* Header text larger, black default, red on hover */
+header,
+header a,
+header button {
+  color: #000 !important;
+  font-size: 2rem;
+  font-weight: 1000;
+}
+header a {
+  font-size: 2.0rem;
+  transition: color 0.3s ease;
+}
+header a:hover {
+  color: #f00 !important;
+}
+header button {
+  font-size: 2.0rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+header button:hover {
+  color: #f00 !important;
 }

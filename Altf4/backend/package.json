@@ -1,0 +1,14 @@
+{
+  "name": "altf4-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/backend.js",
+  "scripts": {
+    "start": "node src/backend.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mariadb": "^3.4.2"
+  }
+}
