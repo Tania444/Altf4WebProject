@@ -1,0 +1,147 @@
+/* Reset globale e root */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Scroll-banner fisso in cima */
+.scroll-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #facc15;
+  overflow: hidden;
+  z-index: 100;
+}
+.scroll-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+.scroll-banner-text span {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+}
+@keyframes scroll-left {
+  0%   { left: 100%; }
+  100% { left: -100%; }
+}
+
+/* Header fisso sotto il banner */
+header {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  height: 2cm;
+  background-color: #facc15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 90;
+  font-family: 'Poppins','Segoe UI','Roboto','Helvetica Neue',sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+header nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+header nav > .group > button {
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  font-family: 'Poppins',sans-serif;
+}
+header nav > .group > button:hover {
+  color: #000;
+}
+
+/* Dropdown invariato */
+header nav .group {
+  position: relative;
+}
+header nav .group ul {
+  position: absolute;
+  top: calc(100% + 0px);
+  left: 0;
+  transform: translateX(-10px) translateY(-10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 100;
+}
+header nav .group:hover ul {
+  transform: translateX(-10px) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+header nav ul li a {
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+header nav ul li a:hover {
+  background-color: #1f2937;
+  transform: scale(1.05);
+}
+
+/* Hero video e overlay testo */
+.hero-text-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-text-overlay h1 {
+  margin: 0;
+  color: #facc15;
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  line-height: 1.1;
+}
+.app-container {
+  padding-top: calc(3rem + 2cm);
+}
+section > video {
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  width: 100vw !important;
+  height: 100% !important;
+  transform: translateX(-50%) !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+}
+#partite {
+  margin-top: calc(750px + 2cm + 3rem) !important;
+}
