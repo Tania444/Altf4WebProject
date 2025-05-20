@@ -1,0 +1,69 @@
+.game-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .scoreboard {
+    margin: 15px 0;
+    font-size: 1.2rem;
+  }
+  
+  .game-area {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    background-color: #fef4d6;
+    overflow: hidden;
+  }
+  
+  .bee {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    transition: transform 0.2s;
+    animation: buzz 0.3s infinite;
+  }
+  
+  .bee:hover {
+    transform: scale(1.2) rotate(10deg);
+  }
+  
+  
+  .result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  @keyframes buzz {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-1px, -1px); }
+  }
+  /*sfondo gaming*/
+  .game-area {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    border: 3px solid #FFD700;
+    border-radius: 20px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px #FFD700;
+    background: url('/Image/alveare1.png') center center / cover no-repeat;
+  }
+  
+  .video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -10;
+    filter: brightness(0.5) contrast(1.2); /* Regola visibilità */
+  }
+  
