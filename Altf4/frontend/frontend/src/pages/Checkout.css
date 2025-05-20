@@ -1,0 +1,125 @@
+.checkout-container {
+  padding-top: 3.5rem; /* o 56px per compensare lo scroll banner */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  justify-content: center;
+}
+
+.scroll-banner {
+  position: fixed;
+  top: 0;
+  z-index: 50; /* attuale */
+}
+
+.checkout-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: -2.6rem; /* effetto "sborda sopra" */
+  transform: scale(1.4);  /* ingrandisce tutto */
+  z-index: 60;
+}
+
+.checkout-logo {
+  height: 100px;
+  width: auto;
+}
+
+.checkout-title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #facc15;
+  text-shadow: 2px 2px 0 #000, 4px 4px 0 #222;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.checkout-form, .checkout-summary {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 20px;
+  flex: 1 1 45%;
+  width: 50%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.checkout-form form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.two-cols {
+  display: flex;
+  gap: 1rem;
+}
+
+.shipping-note {
+  background: #333;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.checkout-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.item-details {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.item-details img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.discount-code {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.discount-code input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.discount-code button {
+  padding: 8px 12px;
+  background-color: #facc15;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+
+.totals p, .totals h3 {
+  margin: 0.5rem 0;
+}
+
+.small {
+  font-size: 0.85rem;
+  color: #aaa;
+}

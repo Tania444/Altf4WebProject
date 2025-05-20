@@ -1,33 +1,46 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { CartProvider } from './context/CartContext';
 
 import './index.css';
+import Layout from './components/Layout.jsx';
 import App from './App.jsx';
-
-import Partite from './pages/Partite.jsx';
 import Shop from './pages/Shop.jsx';
-import Careers from './pages/Careers.jsx';
-import Info from './pages/Info.jsx';
-import Valorant from './pages/Valorant.jsx';
-import CSGO2 from './pages/CSGO2.jsx';
-import FIFA from './pages/FIFA.jsx';
-import LOL from './pages/LOL.jsx';
+import ProductDetail from './pages/ProductDetail.jsx';
+import Checkout from './pages/Checkout.jsx';
+import AboutUs from './pages/AboutUs.jsx';  /*DA IMPLEMENTARE*/ 
+import TeamPage from './pages/TeamPage.jsx' /*DA IMPLEMENTARE*/
+
+/*AGGIUNTA TENNYYYS*/
+import LoginForm from './pages/login/LoginForm.jsx';
+import RegisterForm from './pages/login/RegisterForm.jsx';
+import Profilo from './pages/Profilo.jsx';
+
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/partite" element={<Partite />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/about/careers" element={<Careers />} />
-        <Route path="/about/info" element={<Info />} />
-        <Route path="/games/valorant" element={<Valorant />} />
-        <Route path="/games/csgo2" element={<CSGO2 />} />
-        <Route path="/games/fifa" element={<FIFA />} />
-        <Route path="/games/lol" element={<LOL />} />
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/checkout" element={<Checkout />} />
+
+          {/*AGGIUNTA TENNYYS*/}
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/profilo" element={<Profilo />} />
+          {/* Route padre con layout comune */}
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<App />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/category/:category" element={<Shop />} />
+            <Route path="/shop/:id" element={<ProductDetail />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/games/:slug" element={<TeamPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>
 );

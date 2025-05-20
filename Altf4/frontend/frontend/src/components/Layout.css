@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.page-content {
+  padding-top: calc(3rem + 130px); /* 3rem scroll-banner + circa 130px header */
+}
+
+
+/*SCROLL-BANNER*/
+/* Scroll-banner fisso in alto */
+.scroll-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #000000;
+  overflow: hidden;
+  z-index: 100;
+}
+/* fa roteare la scritta */
+.scroll-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  animation: scroll-left 30s linear infinite;
+  z-index: 2;
+  animation-delay: -10s;
+}
+/*testo sulla scroll bar*/
+.scroll-banner-text span {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #facc15;
+}
+@keyframes scroll-left {
+  0%   { left: 100%; }
+  100% { left: -100%; }
+}
+
+/*HEADER*/
+/* Header fisso sotto il banner */
+header {
+  position: relative;
+  top: 3rem;
+  width: 100%;
+  height: 2cm;
+  background-color: #facc15;
+  display: flex;
+  z-index: 90;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.6rem);
+  font-weight: 600;
+  flex-direction: column;
+}
+
+/*LOGO*/
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.logo-img {
+  background-color: transparent;
+  height: 75px; /* oppure quello che preferisci */
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  
+}
+
+/*TOP-LINE*/
+.menu-top-line {
+  position: absolute;
+  bottom: 2.4rem; /* posizione relativa al bordo inferiore dell’header */
+  left: 130px; /* inizia dopo il logo */
+  right: 0;
+  height: 1.5px;
+  background-color: #000;
+  
+}
+
+/*TOP-ICON*/
+
+.top-icons {
+  margin-left: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  bottom: 10%;
+  gap: 10px;
+  margin-top: -2.3rem; /* ✅ spinge verso il centro verticale della top-bar */
+}
+
+/*CARRELLO E USER_LOGIN*/
+.cart-icon,
+.account-icon {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: black;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/*NUMERO_CARRELLO*/
+.cart-count {
+  position: static; /* ✅ rimuove il badge rosso fluttuante */
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+/*ACCOUNT-ICON*/
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-wrapper button {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-wrapper ul {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #facc15;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.profile-wrapper:hover ul {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.profile-wrapper ul li {
+  font-size: 1rem;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.profile-wrapper ul li a,
+.profile-wrapper ul li button {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.profile-wrapper ul li:hover {
+  background-color: transparent;
+  color: black;
+  transform: scale(1.05);
+}
+ 
+/* Tooltip elegante per logout */
+.tooltip {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.logout-button-wrapper:hover .tooltip {
+  opacity: 1;
+}
+
+.logout-button-wrapper {
+  position: relative;
+}
+
+/*GIOCO*/
+.game-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.game-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/*SCRITTE*/
+header nav {
+  position: absolute;
+  bottom: -0.2rem; /* stacca dal bordo inferiore */
+  right: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+
+
+/*HEADER NAV RESPONSIVE*/
+@media (max-width: 1024px) {
+  header nav a,
+  header nav button {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav a,
+  header nav button {
+    font-size: 1.2rem;
+  }
+
+  header nav {
+    gap: 2rem; /* opzionale: diminuisce lo spazio tra le voci */
+  }
+}
+
+@media (max-width: 480px) {
+  header nav a,
+  header nav button {
+    font-size: 1.1rem;
+  }
+}
+
+header nav > .group > button:hover {
+  color: #000;
+}
+
+/* Dropdown invariato */
+header nav .group {
+  position: relative;
+}
+
+header nav .group ul {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(236, 163, 6, 0.341) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #facc15;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 100;
+}
+
+header nav .group:hover ul {
+  transform: translateX(-10px) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+header nav ul li a {
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+header nav ul li a:hover {
+  background-color: transparent;
+  transform: scale(1.05);
+}
+
+/* Header text larger, black default, red on hover */
+header,
+header a,
+header button {
+  color: #000 !important;
+  font-size: 2rem;
+  font-weight: 1000;
+}
+
+header nav a,
+header nav button {
+  font-size: 1.5rem;
+  font-weight: 1000;
+  transition: transform 0.3s ease, color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #000 !important;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  line-height: 1;
+}
+
+header nav a:hover,
+header nav button:hover{
+  transform: scale(1.1);
+  color: black !important; /* oppure il colore giallo attivo che preferisci */
+}
+

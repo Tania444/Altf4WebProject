@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.profilo-container {
+  height: 100vh;
+  width: 100vw;
+  background: url('/IMAGE/alveare2.png') center center / cover no-repeat fixed;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Effetto vignettato */
+.profilo-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.4));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ape decorativa */
+.profilo-container::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  background-image: url('/image/bee-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Ape fluttuante dinamica */
+.bee-float {
+  width: 50px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fly 6s infinite ease-in-out;
+  opacity: 0.85;
+  z-index: 3;
+}
+
+@keyframes fly {
+  0%   { transform: translateX(-50%) translateY(0px) rotate(0deg); }
+  25%  { transform: translateX(-45%) translateY(-15px) rotate(5deg); }
+  50%  { transform: translateX(-50%) translateY(-25px) rotate(-5deg); }
+  75%  { transform: translateX(-55%) translateY(-15px) rotate(3deg); }
+  100% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
+}
+
+/* Card principale */
+.profilo-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: clamp(280px, 90%, 500px);
+  text-align: center;
+  z-index: 4;
+}
+
+/* Titolo */
+.profilo-card h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #facc15;
+  margin-bottom: 1rem;
+  animation: slideIn 0.6s ease;
+}
+
+/* Paragrafi */
+.profilo-card p {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  color: #e5e5e5;
+}
+
+/* Form */
+.profilo-container form {
+  width: 100%;
+}
+
+.profilo-container form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #facc15;
+  font-weight: 600;
+  text-align: left;
+}
+
+.profilo-container form input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.3); /* effetto vetro scuro */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profilo-container form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #facc15;
+  background-color: #1f1f1f;
+}
+
+/* Bottoni del form */
+.profilo-container .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profilo-container .form-buttons button {
+  flex: 0.5;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profilo-container .form-buttons button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.profilo-container form button[type="submit"] {
+  background-color: #4ade80;
+  color: black;
+}
+
+.profilo-container form button[type="button"] {
+  background-color: #f87171;
+  color: white;
+}
+
+/* Pulsante home */
+.profilo-card .home-btn {
+  margin-top: 1.5rem;
+  background: none;
+  border: none;
+  color: #facc15;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Pulsante modifica statico */
+.profilo-card button {
+  background-color: #facc15;
+  color: black;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profilo-card button:hover {
+  transform: scale(1.05);
+}
+
+/* Messaggio successo */
+.success-message {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 5px #065f46;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .profilo-card {
+    padding: 2rem 1.2rem;
+    width: clamp(280px, 90%, 500px);
+  }
+
+  .profilo-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
