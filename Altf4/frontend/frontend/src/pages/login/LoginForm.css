@@ -1,0 +1,239 @@
+.login-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .centered-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .wrapper {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px 40px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  
+  .wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    }
+  
+  .input-box {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+  
+  }
+  
+.input-box input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+  cursor: text;
+  transition: all 0.3s ease;
+}
+  .input-box input::placeholder {
+    color: #fff;
+    opacity: 1; 
+  }
+  
+  .input-box .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin: 15px 0;
+    color: #fff;
+  }
+  
+  .remember-forgot label {
+    display: flex;
+    align-items: center;
+    }
+  
+  .remember-forgot input[type="checkbox"] {
+    accent-color: #fff;
+    margin-right: 5px;
+  }
+  
+  .remember-forgot a {
+    color: #fff;
+        text-decoration: none;
+    transition: 0.2s ease;
+  }
+  
+  .remember-forgot a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .login-btn:hover {
+    background: #fff;
+  }
+  
+  .register-link {
+    margin-top: 15px;
+    text-align: center;
+    color: #fff;
+
+  }
+
+  
+  .register-link button {
+    background: none;
+    border: none;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  /* DECORAZIONI INPUT */
+  .input-box input:hover,
+  .input-box input:focus {
+    border-color: #facc15; /* giallo senape */
+    box-shadow: 0 0 10px rgba(245, 197, 24, 0.6);
+    outline: none;
+  }
+  
+  .input-box input::placeholder {
+    color: #facc15;
+    transition: color 0.3s ease;
+  }
+  
+  .input-box input:hover::placeholder {
+    color: #fff;
+  }
+  
+  /* DECORAZIONI BOTTONE LOGIN */
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #f5c518, #d4af37); /* senape oro */
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+    transform: translateY(0);
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(135deg, #fff176, #fbc02d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+  }
+  /* responsive */
+
+
+  @media (max-width: 480px) {
+    .wrapper {
+      padding: 20px;
+    }
+    .wrapper h1 {
+      font-size: 24px;
+    }
+    .input-box input {
+      font-size: 16px;
+    }
+  }
+
+  input, button {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  
+/* POPUP DI SUCCESSO LOGIN */
+.popup {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* sfondo scuro trasparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup p {
+  background: black; 
+  padding: 30px 50px;
+  border-radius: 20px;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  max-width: 80%;
+  animation: fadeIn 0.3s ease-in-out;
+  line-height: 1.5;
+}
+
+/* Effetto fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  
