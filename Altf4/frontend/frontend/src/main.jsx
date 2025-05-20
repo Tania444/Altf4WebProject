@@ -17,6 +17,8 @@ import TeamPage from './pages/TeamPage.jsx' /*DA IMPLEMENTARE*/
 import LoginForm from './pages/login/LoginForm.jsx';
 import RegisterForm from './pages/login/RegisterForm.jsx';
 import Profilo from './pages/Profilo.jsx';
+import ClickGame from './pages/ClickGame';
+
 
 
 createRoot(document.getElementById('root')).render(
@@ -38,6 +40,8 @@ createRoot(document.getElementById('root')).render(
             <Route path="/shop/:id" element={<ProductDetail />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/games/:slug" element={<TeamPage />} />
+            <Route path="/minigioco" element={<ClickGame />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
